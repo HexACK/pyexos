@@ -138,7 +138,7 @@ class EXOS(object):
             # make a backup of the running_config
             self.get_running_config()
             # send candidate_config
-            commands = list(set(self.candidate_config))
+            commands = self.candidate_config
             commands.append('save')
             for command in commands:
                 output = self.device.send_command_timing(command)
