@@ -144,7 +144,7 @@ class EXOS(object):
                 output = self.device.send_command_timing(command)
                 if ('Invalid input detected' in output or
                         'Unrecognized command' in output or
-                        output.startswith("Error:")):
+                        'Error:' in output):
                     msg = "Error while sending the '{0}' command: \n{1}".format(command, output)
                     self.log.error(msg)
                     raise EXOSException(msg)
